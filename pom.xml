@@ -1,3 +1,34 @@
-<vertical display_name="Text Input with Hints and Feedback">
-  <problem url_name="f9fe4049bc1a44d783a774ebbd7fd1cd"/>
-</vertical>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+   version="2.5">-
+	<!--
+
+   Copyright 2006 Sun Microsystems, Inc. All rights reserved.
+ 
+-->
+-
+	<web-app>
+<display-name>webapps-caching</display-name>
+-
+	<servlet>
+<servlet-name>ServCache</servlet-name>
+<servlet-class>samples.webapps.caching.ServCache</servlet-class>
+<load-on-startup>0</load-on-startup>
+</servlet>
+-
+	<servlet-mapping>
+<servlet-name>ServCache</servlet-name>
+<url-pattern>/ServCache</url-pattern>
+</servlet-mapping>
+-
+	<session-config>
+<session-timeout>30</session-timeout>
+</session-config>
+-
+	<taglib>
+<taglib-uri>/com/sun/web/taglibs/cache</taglib-uri>
+<taglib-location>/WEB-INF/sun-web-cache.tld</taglib-location>
+</taglib>
+</web-app>
